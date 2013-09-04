@@ -1,0 +1,29 @@
+.tabbed-panels {
+	* { margin-left: 2em }
+
+	&:before, &:after {
+		display: block;
+	}
+
+	&:before, div:before {
+		content: '<div class="' attr(class) '">';
+	}
+
+	&:after, div:after {
+		content: '</div>';
+	}
+
+	button {
+		display: block;
+		margin-top: .5em;
+		margin-bottom: .5em;
+
+		&:before {
+			content: '<button class="' attr(class) '">';
+		}
+
+		&:after {
+			content: '</button>';
+		}
+	}
+}
