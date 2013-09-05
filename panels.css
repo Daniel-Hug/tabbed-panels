@@ -1,0 +1,36 @@
+.tabbed-panels.active .tab {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tabbed-panels .tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tabbed-panels .tabs li {
+  display: inline-block;
+  margin-left: 12px;
+}
+.tabbed-panels .tabs li:last-child {
+  margin-right: 12px;
+}
+.tabbed-panels .tab {
+  position: relative;
+  top: 1px;
+}
+.tabbed-panels .tab.active {
+  background: white;
+  border-bottom-color: white;
+}
+.tabbed-panels:not(.closeable) .tab.active {
+  cursor: default;
+}
+.tabbed-panels:not(.closeable) .tab.active:active {
+  box-shadow: none;
+}
+.tabbed-panels .panel {
+  display: none;
+}
+.tabbed-panels .panel.active {
+  display: block;
+}

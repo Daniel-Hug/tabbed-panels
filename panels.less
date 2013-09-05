@@ -1,0 +1,47 @@
+.tabbed-panels {
+	&.active .tab {
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.tabs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin-left: 12px;
+			
+			&:last-child {
+				margin-right: 12px;
+			}
+		}
+	}
+
+	.tab {
+		position: relative;
+		top: 1px;
+
+		&.active {
+			background: white;
+			border-bottom-color: white;
+		}
+	}
+
+	&:not(.closeable) .tab.active {
+		cursor: default;
+
+		&:active {
+			box-shadow: none;
+		}
+	}
+
+	.panel {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}
