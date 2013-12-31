@@ -44,4 +44,19 @@
 			display: block;
 		}
 	}
+
+	&.hovering {
+		position: relative;
+
+		.tab {
+			position: relative;
+			z-index: 11;
+		}
+		.panel {
+			position: absolute;
+			right: 0;
+			top: 100%;
+			z-index: 10;
+		}
+	}
 }
