@@ -30,6 +30,8 @@
 }
 .tabbed-panels .panel {
   display: none;
+  border: 1px solid #ccc;
+  padding: 1em;
 }
 .tabbed-panels .panel.active {
   display: block;
@@ -47,3 +49,4 @@
   top: 100%;
   z-index: 10;
 }
+/*# sourceMappingURL=style.map */
