@@ -4,55 +4,45 @@
 
 
 /* tabs */
-.tabbed-panels .tabs {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.tabbed-panels .tabs li {
-	display: inline-block;
-	margin-left: 12px;
-}
-
-.tabbed-panels .tabs li:last-child {
-	margin-right: 12px;
-}
-
-.tabbed-panels .tab {
+.tabbed-panels > .tab,
+.tabbed-panels > .tabs > .tab {
 	position: relative;
 	top: 1px;
 }
 
-.tabbed-panels.active .tab {
+.tabbed-panels.active > .tab,
+.tabbed-panels.active > .tabs > .tab {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.tabbed-panels .tab.active {
+.tabbed-panels > .tab.active,
+.tabbed-panels > .tabs > .tab.active {
 	background: white;
 	border-bottom-color: white;
 }
 
-.tabbed-panels:not(.closeable) .tab.active {
+.tabbed-panels:not(.closeable) > .tab.active,
+.tabbed-panels:not(.closeable) > .tabs > .tab.active {
 	cursor: default;
 }
 
-.tabbed-panels:not(.closeable) .tab.active:active {
+.tabbed-panels:not(.closeable) > .tab.active:active
+.tabbed-panels:not(.closeable) > .tabs > .tab.active:active {
 	box-shadow: none;
 }
 
 
 
 /* panels */
-.tabbed-panels .panel {
+.tabbed-panels > .panel {
 	display: none;
 	border: 1px solid #ccc;
 	padding: 1em;
 	background: white;
 }
 
-.tabbed-panels .panel.active {
+.tabbed-panels > .panel.active {
 	display: block;
 }
 
@@ -62,12 +52,13 @@
 	position: relative;
 }
 
-.tabbed-panels.hovering .tab {
+.tabbed-panels.hovering > .tab,
+.tabbed-panels.hovering > .tabs > .tab {
 	position: relative;
 	z-index: 11;
 }
 
-.tabbed-panels.hovering .panel {
+.tabbed-panels.hovering > .panel {
 	position: absolute;
 	right: 0;
 	top: 100%;

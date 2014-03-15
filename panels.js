@@ -1,9 +1,11 @@
 // toggleable tabbed panels
-(function($$) {
-	$$('.tabbed-panels').forEach(function(parent) {
-		var tabs = $$('.tab', parent);
-		var panels = $$('.panel', parent);
+(function($) {
+	$('.tabbed-panels').forEach(function(parent) {
+		var tabsParent = $('tabs', parent)[0];
+		var tabs = $('tab', tabsParent || parent);
+		var panels = $('panel', parent);
 		var closeable = parent.classList.contains('closeable');
+
 		tabs.forEach(function(tab, i) {
 			tab.addEventListener('click', function() {
 				tabs.forEach(function(tab) {
@@ -25,7 +27,10 @@
 		});
 	});
 
-// Get elements by CSS selector:
-})(function(selector, el) {
-	return [].slice.call( (el || document).querySelectorAll(selector) );
+// Get children with class:
+})(function(className, scopeEl) {
+	var elements = (scopeEl || document).getElementsByClassName(className);
+	return scopeEl ? [].filter.call(elements, function(child) {
+		return child.parentNode === scopeEl;
+	}) : elements;
 });
