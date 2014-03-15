@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
-	
+
 <head>
 	<meta charset=utf-8>
 	<title>Tabbed panels class toggling demo</title>
-	
+
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://daniel-hug.github.io/FatUI/FatUI.css">
 	<link rel="stylesheet" href="panels.css">
@@ -13,42 +13,42 @@
 
 <body>
 	<h1>Tabbed Panels</h1>
-	
-	<h2>With default styles:</h2>
+
+	<h2>Demos:</h2>
 	<div class="tabbed-panels closeable active">
-		<button class="tab active">Tab 1</button>
-		<button class="tab">Tab 2</button>
+
+		<!-- Tabs -->
+		<button class="tab">default markup</button>
+		<button class="tab active">closeable markup</button>
 		<button class="tab">Tab 3</button>
-		<div class="panel active">Panel 1</div>
-		<div class="panel">Panel 2</div>
+
+		<!-- Panels -->
+		<div class="panel">
+			<div class="markup-demo">
+				<div class="tabbed-panels active">
+					<button class="tab">Tab 1</button>
+					<button class="tab active">Tab 2</button>
+					<button class="tab">Tab 3</button>
+					<div class="panel">Panel 1</div>
+					<div class="panel active">Panel 2</div>
+					<div class="panel">Panel 3</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel active">
+			<div class="markup-demo">
+				<div class="tabbed-panels closeable">
+					<button class="tab">Tab 1</button>
+					<button class="tab">Tab 2</button>
+					<button class="tab">Tab 3</button>
+					<div class="panel">Panel 1</div>
+					<div class="panel">Panel 2</div>
+					<div class="panel">Panel 3</div>
+				</div>
+			</div>
+		</div>
 		<div class="panel">Panel 3</div>
-	</div>
 
-	<br>
-
-	<h2>How does it work?</h1>
-	<p>Like this:</p>
-
-	<div class="markup-demo">
-		<div class="tabbed-panels closeable">
-			<button class="tab">Tab 1</button>
-			<button class="tab">Tab 2</button>
-			<button class="tab">Tab 3</button>
-			<div class="panel">Panel 1</div>
-			<div class="panel">Panel 2</div>
-			<div class="panel">Panel 3</div>
-		</div>
-	
-		<br>
-	
-		<div class="tabbed-panels active">
-			<button class="tab">Tab 1</button>
-			<button class="tab active">Tab 2</button>
-			<button class="tab">Tab 3</button>
-			<div class="panel">Panel 1</div>
-			<div class="panel active">Panel 2</div>
-			<div class="panel">Panel 3</div>
-		</div>
 	</div>
 
 	<!-- JS -->
