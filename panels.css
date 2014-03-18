@@ -20,6 +20,8 @@
 .tabbed-panels > .tabs > .tab.active {
 	background: white;
 	border-bottom-color: white;
+	position: relative;
+	z-index: 1;
 }
 
 .tabbed-panels:not(.closeable) > .tab.active,
@@ -40,6 +42,7 @@
 	border: 1px solid #ccc;
 	padding: 1em;
 	background: white;
+	position: relative;
 }
 
 .tabbed-panels > .panel.active {
