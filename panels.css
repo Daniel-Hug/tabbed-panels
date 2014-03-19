@@ -4,8 +4,7 @@
 
 
 /* tabs */
-.tabbed-panels > .tab,
-.tabbed-panels > .tabs > .tab {
+.tab {
 	position: relative;
 	top: 1px;
 }
@@ -16,22 +15,17 @@
 	border-bottom-left-radius: 0;
 }
 
-.tabbed-panels > .tab.active,
-.tabbed-panels > .tabs > .tab.active {
-	background: white;
-	border-bottom-color: white;
+.tab.active {
 	position: relative;
 	z-index: 1;
+	border-bottom-color: white;
+	box-shadow: none;
+	background: white;
 }
 
 .tabbed-panels:not(.closeable) > .tab.active,
 .tabbed-panels:not(.closeable) > .tabs > .tab.active {
 	cursor: default;
-}
-
-.tabbed-panels:not(.closeable) > .tab.active:active
-.tabbed-panels:not(.closeable) > .tabs > .tab.active:active {
-	box-shadow: none;
 }
 
 
@@ -51,17 +45,17 @@
 
 
 /* hovering panels (for dropdowns) */
-.tabbed-panels.hovering {
+.hovering {
 	position: relative;
 }
 
-.tabbed-panels.hovering > .tab,
-.tabbed-panels.hovering > .tabs > .tab {
+.hovering > .tab,
+.hovering > .tabs > .tab {
 	position: relative;
 	z-index: 11;
 }
 
-.tabbed-panels.hovering > .panel {
+.hovering > .panel {
 	position: absolute;
 	right: 0;
 	top: 100%;
