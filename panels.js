@@ -6,18 +6,18 @@
 
 	tabs.forEach(function(tab, i) {
 		tab.addEventListener('click', function() {
+			// non-clicked tabs: deactivate
 			tabs.forEach(function(tab) {
 				if (tab != this) tab.classList.remove('active');
 			}, this);
 
-			if (closeable) {
-				var isActive = this.classList.toggle('active');
-				parent.classList[isActive ? 'add' : 'remove']('active');
-			} else {
-				this.classList.add('active');
-				parent.classList.add('active');
-			}
+			// clicked tab: if closeable, toggle its active state, otherwise activate
+			var isActive = closeable ? this.classList.toggle('active') : this.classList.add('active');
 
+			// parent: if a tab is active, activate parent, otherwise deactivate
+			parent.classList[(!closeable || isActive) ? 'add' : 'remove']('active');
+
+			// panels: activate clicked tab's panel, deactivate other panels
 			panels.forEach(function(panel, j) {
 				panel.classList[j === i ? (closeable ? 'toggle' : 'add') : 'remove']('active');
 			});
