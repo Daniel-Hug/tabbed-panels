@@ -35,5 +35,9 @@ A declarative tabbed panels JS module
  - To make panels hover over other page content add a "**hovering**" class to the `.tabbed-panels` wrapper. Combining the closeable and hovering classes will make the panels close when you click elsewhere on the page.
  - To have a panel defaultly be open, add an "**active**" class to the panel, its tab, and its `.tabbed-panels` wrapper.
 
+## Styling
+
+You can use panels.css and/or your own custom CSS. Whenever a panel is open, it, its tab, and its `.tabbed-panels` wrapper all have an "**active**" class.
+
 ## Browser support
 Requires `getElementsByClassName`, `classList`, `forEach`, and `filter`.
