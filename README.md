@@ -1,4 +1,4 @@
-tabbed-panels
+tabbed-panels: [Demo](http://daniel-hug.github.io/tabbed-panels/)
 =============
 
 A declarative tabbed panels JS module
