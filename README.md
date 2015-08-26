@@ -37,7 +37,7 @@ A declarative tabbed panels JS module
 
 ## Styling
 
-You can use panels.css and/or your own custom CSS. Whenever a panel is open, it, its tab, and its `.tabbed-panels` wrapper all have an "**active**" class.
+You can use panels.css and/or your own custom CSS. Whenever a panel is open, the panel, its tab, and its `.tabbed-panels` wrapper all have an "**active**" class.
 
 ## Browser support
 Requires `getElementsByClassName`, `classList`, `forEach`, and `filter`.
