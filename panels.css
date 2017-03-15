@@ -4,18 +4,18 @@
 
 
 /* tabs */
-.tab {
+.tabbed-panels .tab {
 	position: relative;
 	top: 1px;
 }
 
 .tabbed-panels.active > .tab,
-.tabbed-panels.active > .tabs > .tab {
+.tabbed-panels.active :not(.tabbed-panels) .tab {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.tab.active {
+.tabbed-panels .tab.active {
 	position: relative;
 	z-index: 1;
 	border-bottom-color: white;
@@ -24,14 +24,15 @@
 }
 
 .tabbed-panels:not(.closeable) > .tab.active,
-.tabbed-panels:not(.closeable) > .tabs > .tab.active {
+.tabbed-panels:not(.closeable) :not(.tabbed-panels) .tab.active {
 	cursor: default;
 }
 
 
 
 /* panels */
-.tabbed-panels > .panel {
+.tabbed-panels > .panel,
+.tabbed-panels :not(.tabbed-panels) .panel {
 	display: none;
 	border: 1px solid #ccc;
 	padding: 1em;
@@ -39,23 +40,25 @@
 	position: relative;
 }
 
-.tabbed-panels > .panel.active {
+.tabbed-panels > .panel.active,
+.tabbed-panels :not(.tabbed-panels) .panel.active {
 	display: block;
 }
 
 
 /* hovering panels (for dropdowns) */
-.hovering {
+.tabbed-panels.hovering {
 	position: relative;
 }
 
-.hovering > .tab,
-.hovering > .tabs > .tab {
+.tabbed-panels.hovering > .tab,
+.tabbed-panels.hovering :not(.tabbed-panels) .tab {
 	position: relative;
 	z-index: 11;
 }
 
-.hovering > .panel {
+.tabbed-panels.hovering > .panel,
+.tabbed-panels.hovering :not(.tabbed-panels) .panel {
 	width: 100%;
 	position: absolute;
 	right: 0;

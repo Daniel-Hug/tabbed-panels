@@ -48,7 +48,7 @@
 }, function(className, scopeEl) {
 	return [].filter.call(scopeEl.getElementsByClassName(className), function(child) {
         var el = child;
-		while ((el = child.parentNode)) {
+		while ((el = el.parentNode)) {
             if (el === scopeEl) break;
             if (el.classList.contains('tabbed-panels')) return false;
 		}
