@@ -1,6 +1,6 @@
 // toggleable tabbed panels
 [].forEach.call(document.getElementsByClassName('tabbed-panels'), function(parent) {
-	var tabs = this('tab', this('tabs', parent)[0] || parent);
+	var tabs = this('tab', parent);
 	var panels = this('panel', parent);
 	var closeable = parent.classList.contains('closeable');
 	var hovering = parent.classList.contains('hovering');
@@ -43,9 +43,15 @@
 		});
 	}
 
-// Get children with class:
+// Get descendants of scopeEl with className that have no
+// .tabbed-panels ancestor which is also a descendant of scopeEl:
 }, function(className, scopeEl) {
 	return [].filter.call(scopeEl.getElementsByClassName(className), function(child) {
-		return child.parentNode === scopeEl;
+        var el = child;
+		while ((el = child.parentNode)) {
+            if (el === scopeEl) break;
+            if (el.classList.contains('tabbed-panels')) return false;
+		}
+		return true;
 	});
 });
