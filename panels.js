@@ -1,17 +1,20 @@
 // toggleable tabbed panels
 (function(){
 	// get nearest parent element matching selector
-	var closestParent = (function() {
+	var closestParent = Element.prototype.closest ? function(el, selector) {
+		return el.closest(selector);
+	} : (function() {
 		var el = HTMLElement.prototype;
 		var matches = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
 
 		function closestParent(el, selector) {
-			if (el === null) return null;
-			if (matches.call(el, selector)) {
-				return el;
-			} else {
-				return closestParent(el.parentElement, selector);
+			while (el && el.nodeType === 1) {
+				if (matches.call(el, selector)) {
+					return el;
+				}
+				el = el.parentNode;
 			}
+			return null;
 		}
 		return closestParent;
 	})();
@@ -38,10 +41,10 @@
 	// This is needed to support nesting of tabbed panels.
 	function getElements(className, scopeEl) {
 		return [].filter.call(scopeEl.getElementsByClassName(className), function(child) {
-	        var el = child;
+			var el = child;
 			while ((el = el.parentNode)) {
-	            if (el === scopeEl) break;
-	            if (el.classList.contains('tabbed-panels')) return false;
+				if (el === scopeEl) break;
+				if (el.classList.contains('tabbed-panels')) return false;
 			}
 			return true;
 		});
