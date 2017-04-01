@@ -7,7 +7,7 @@
 		var el = HTMLElement.prototype;
 		var matches = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
 
-		function closestParent(el, selector) {
+		return function(el, selector) {
 			while (el && el.nodeType === 1) {
 				if (matches.call(el, selector)) {
 					return el;
@@ -15,8 +15,7 @@
 				el = el.parentNode;
 			}
 			return null;
-		}
-		return closestParent;
+		};
 	})();
 
 
@@ -54,8 +53,8 @@
 		return a === b || b.contains(a);
 	}
 
-	function tabClick(clickedTab) {
-		clickedTab = clickedTab.parentNode ? clickedTab : this;
+	delegateEvent('.tab', 'click', function() {
+		var clickedTab = this;
 		var parent = closestParent(clickedTab, '.tabbed-panels');
 		if (!parent) return;
 
@@ -83,9 +82,7 @@
 				panel.classList.remove('active');
 			}
 		});
-	}
-
-	delegateEvent('.tab', 'click', tabClick);
+	});
 
 	window.addEventListener('click', function(event) {
 		var parents = [].slice.call(document.querySelectorAll('.tabbed-panels.hovering.closeable.active'));
